@@ -1,11 +1,11 @@
-pyinit
+fig-py
 ======
-`pyinit` is a command line tool for generating skeletons of python packages from a directory of `jinja` templates.
+`fig-py` is a command line tool for generating skeletons of python packages from a directory of `jinja` templates.
 
 The interface is easy:
 
 ```
-pyinit -p my-new-project -g my-github-user-name
+fig -p my-new-project -g my-github-user-name
 ```
 
 This will initialize a highly-opinionated github repository, with your command line args inserted in relevant places throughout the following directory tree:
@@ -52,12 +52,12 @@ You can build and serve the docs by running `build.sh`.
 
 If you'd like, you can also create your own folder of `jinja` templates and pass it in as follows:
 ```
-pyinit -p my-new-project -g my-github-user-name -t path/to/my-template/
+fig -p my-new-project -g my-github-user-name -t path/to/my-template/
 ```
 
 You can also pass in a series of custom json key-value pairs if you want to add extra context:
 ```
-pyinit -p my-new-project -g my-github-user-name -t my-template/ -k "{'key1':'value1', 'key2':'value2'}"
+fig -p my-new-project -g my-github-user-name -t my-template/ -k "{'key1':'value1', 'key2':'value2'}"
 ```
 
 These values can be inserted anywhere in your custom templates using standard `jinja` syntax:
@@ -67,7 +67,7 @@ These values can be inserted anywhere in your custom templates using standard `j
 
 Heres the full cli specification:
 ```
-usage: pyinit [-h] [-p PROJECT_NAME] [-g GITHUB_USER] [-a AUTHOR] [-e EMAIL]
+usage: fig [-h] [-p PROJECT_NAME] [-g GITHUB_USER] [-a AUTHOR] [-e EMAIL]
               [-d DESCRIPTION] [-t TEMPLATE_PATH] [-k KWARGS]
 
 Initialize a python repository.
@@ -93,14 +93,13 @@ optional arguments:
 
 ## Installation
 ```
-pip install pyinit
+pip install fig-py
 ```
 
 TODO:
 * Don't rely on `os.system()`
 * create repository on `github`
 * activate virtualenv
-* link `README.md` -> index.rst for docs.
 * webhooks for read the docs / s3 upload for data / binaries.
 
 
