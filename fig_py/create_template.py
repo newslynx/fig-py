@@ -62,13 +62,12 @@ def render_tmpl(tmpl, tmpl_context):
   rendered = tmpl.render(**tmpl_context)
   return rendered
 
-
 def get_readme_rst(tmpl_path, tmpl_context):
 
   # get readme and render
   readme_tmpl = get_readme_tmpl(tmpl_path)
   readme = render_tmpl(readme_tmpl, tmpl_context)
-  print readme
+
   # convert to rst if pandoc is installed.
   try:
     import pypandoc
@@ -82,7 +81,6 @@ def get_readme_rst(tmpl_path, tmpl_context):
     """.format(**tmpl_context)
 
   return readme_rst
-
 
 def create_template(opts):
 

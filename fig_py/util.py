@@ -8,10 +8,8 @@ class VirtualEnvError(Exception):
 class InitError(Exception):
   pass
 
-def exec_quiet(args):
-  # print args
-  # subprocess.call(args, shell=True)
-  os.system(" ".join(args))
+def call(args, shell=False):
+  subprocess.Popen(args, shell=shell)
 
 def mkvirtualenv(project_name):
   """
@@ -22,21 +20,18 @@ def mkvirtualenv(project_name):
       "It looks like you don't have virtualenvwrapper installed."
       )
   # mkvirtualenv
-  exec_quiet(["source", "/usr/local/bin/virtualenvwrapper.sh"])
-  exec_quiet(["mkvirtualenv", project_name])
+  call(["source", "/usr/local/bin/virtualenvwrapper.sh"])
+  call(["mkvirtualenv", project_name], shell=True)
 
 def workon(project_name):
   # exec_quiet(["source", "/usr/local/bin/virtualenvwrapper.sh"])
-  exec_quiet(["workon", project_name])
+  call(["workon", project_name], shell=True)
 
 def git_init():
-  exec_quiet(["git", "init"])
-  exec_quiet(["git", "add", "."])
-  exec_quiet(["git", "commit", "-m", "'initial commit'"])
+  call(["git", "init"])
+  call(["git", "add", "."])
+  call(["git", "commit", "-m", "'initial commit'"])
 
 def make_abs_path(fn):
   return os.path.abspath(os.path.join(os.getcwd(), fn))
-
-
-
 

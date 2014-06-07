@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-pyinit -p pyinit -g newslynx \
+fig -p fig -g newslynx \
 -a 'Brian Abelson' -e 'brianabelson@gmail.com' \
 -d 'A python package for initializing python packages'
 """
