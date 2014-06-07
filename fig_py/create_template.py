@@ -46,6 +46,7 @@ def load_kwargs(kwargs):
 
   return kwarg_opts
 
+
 def get_readme_tmpl(tmpl_path):
   fp = [
     os.path.join(tmpl_path, fp)
@@ -55,10 +56,12 @@ def get_readme_tmpl(tmpl_path):
   with open(fp[0], 'rb') as f:
     return f.read()
 
+
 def render_tmpl(tmpl, tmpl_context):
   tmpl = Template(tmpl)
   rendered = tmpl.render(**tmpl_context)
   return rendered
+
 
 def get_readme_rst(tmpl_path, tmpl_context):
 
@@ -79,6 +82,7 @@ def get_readme_rst(tmpl_path, tmpl_context):
     """.format(**tmpl_context)
 
   return readme_rst
+
 
 def create_template(opts):
 

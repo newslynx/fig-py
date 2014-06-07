@@ -13,35 +13,43 @@ from util import *
 from create_template import create_template
 
 def parse_args():
-  parser = argparse.ArgumentParser(description='Initialize a python repository.')
+  parser = argparse.ArgumentParser(
+    description='Initialize a python repository from a directory of jinja templates.')
+
   parser.add_argument(
     '-p', '--project-name', 
     dest='project_name',
     help='The name of your project.')
+
   parser.add_argument(
     '-g', '--github-user', 
     dest='github_user',
     help='Your github user name.')
+
   parser.add_argument(
     '-a', '--author', 
     dest='author',
     help="Your name.",
     default="")
+
   parser.add_argument(
     '-e', '--email', 
     dest='email',
     help="Your email.",
     default="")
+
   parser.add_argument(
     '-d', '--description', 
     dest='description',
     help="The projects' description.",
     default="")
+
   parser.add_argument(
     '-t', '--template', 
     dest='tmpl_path',
     help="A directory of custom templates",
     default=None)
+
   parser.add_argument(
     '-k', '--kwargs', 
     dest='kwargs',
