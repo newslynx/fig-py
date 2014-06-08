@@ -16,12 +16,12 @@ readme = os.path.join(os.path.dirname(__file__), 'README.md')
 
 try:
   import pypandoc
-  long_description = pypandoc.convert(readme, 'rst')
+  long_description = pypandoc.convert(readme, 'rst', format="md")
 except (IOError, ImportError):
   long_description = ""
 
 # parse requirements file
-required = [str(ir.req) for ir in parse_requirements("requirements.txt")]
+# required = [str(ir.req) for ir in parse_requirements("requirements.txt")]
 
 # setup
 setup(
