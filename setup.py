@@ -36,7 +36,7 @@ for dir_name, dir_list, filename_list in os.walk(rel_path):
 # setup
 setup(
   name='fig-py',
-  version='0.0.4',
+  version='0.0.5',
   description='An utility for configuring python projects from jinja templates.',
   long_description = long_description,
   classifiers=[
