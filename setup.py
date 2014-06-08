@@ -7,8 +7,8 @@ import codecs
 try: 
   codecs.lookup('mbcs') 
 except LookupError: 
-  ascii = codecs.lookup('ascii') 
-  func = lambda name, enc=ascii: {True: enc}.get(name=='mbcs') 
+  utf8 = codecs.lookup('utf-8') 
+  func = lambda name, enc=utf8: {True: enc}.get(name=='mbcs') 
   codecs.register(func) 
 
 # install readme
