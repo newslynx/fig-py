@@ -26,7 +26,7 @@ required = [str(ir.req) for ir in parse_requirements("requirements.txt")]
 # setup
 setup(
   name='{{ project_name }}',
-  version='0.1.0',
+  version='0.0.1',
   description='{{ description }}',
   long_description = long_description,
   classifiers=[
