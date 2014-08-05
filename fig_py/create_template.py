@@ -110,22 +110,17 @@ def create_template(opts):
 
   for dir_name, dir_list, file_list in os.walk(tmpl_path.encode('utf-8')):
 
-    # set the path for the destination folder
-    dest = dir_name.replace(tmpl_path, base_path)
-
-    # if the source directory doesn't exist in the destination folder,
-    # create it
-    if not os.path.isdir(dest):
-      os.makedirs(dest)
-
     # copy over files, optionally applying templating
     for filename in file_list:
+      
       # if somehow a DS_Store or pyc gets in here during dev, skip it
-      if 'DS_Store' in filename or '.pyc' in filename:
+      if 'DS_Store' in filename \
+          or '.pyc' in filename \
+          or filename == "__init__.py":
         continue
 
-      old_path = os.path.join(dir_name, filename)
-      new_path = os.path.join(dest, filename)
+      path = os.path.join(dir_name, filename)
+
       
       # read in the template file
       tmpl_fh = open(old_path, 'r')
