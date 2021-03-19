@@ -56,7 +56,7 @@ setup(
   include_package_data=False,
   zip_safe=False,
   install_requires=[
-    "Jinja2==2.7.2",
+    "Jinja2==2.11.3",
     "MarkupSafe==0.23",
     "PyYAML==3.11",
     "Pygments==1.6",
