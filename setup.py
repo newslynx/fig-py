@@ -58,7 +58,7 @@ setup(
   install_requires=[
     "Jinja2==2.7.2",
     "MarkupSafe==0.23",
-    "PyYAML==3.11",
+    "PyYAML==5.4",
     "Pygments==1.6",
     "Sphinx==1.2.2",
     "docutils==0.11",
