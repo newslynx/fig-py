@@ -59,7 +59,7 @@ setup(
     "Jinja2==2.7.2",
     "MarkupSafe==0.23",
     "PyYAML==3.11",
-    "Pygments==1.6",
+    "Pygments==2.7.4",
     "Sphinx==1.2.2",
     "docutils==0.11",
     "nose==1.3.3",
